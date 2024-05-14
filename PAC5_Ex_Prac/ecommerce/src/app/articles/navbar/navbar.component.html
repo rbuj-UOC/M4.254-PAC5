@@ -1,0 +1,15 @@
+<div class="navmenu">
+    <button class="menu-item" [class]="active == 0 ? 'active' : ''" (click)="setSelectedItem(0)">Inici</button>
+    <button class="menu-item" [class]="active == 1 ? 'active' : ''" (click)="setSelectedItem(1)">Articles</button>
+    <button class="menu-item" [class]="active == 2 ? 'active' : ''" (click)="setSelectedItem(2)">Nou article template</button>
+    <button class="menu-item" [class]="active == 3 ? 'active' : ''" (click)="setSelectedItem(3)">Nou article reactiu</button>
+</div>
+<div *ngIf="active == 0 || active == 1">
+    <app-article-list></app-article-list>
+</div>
+<div *ngIf="active == 2">
+    <app-article-new-template></app-article-new-template>
+</div>
+<div *ngIf="active == 3">
+    <app-article-new-reactive></app-article-new-reactive>
+</div>
