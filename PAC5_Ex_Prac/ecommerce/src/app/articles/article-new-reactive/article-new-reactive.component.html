@@ -1,1 +1,45 @@
-<p>article-new-reactive works!</p>
+<h3>
+    Crear un article (ReactiveFormsModule)
+</h3>
+
+<div class="form-group">
+    <h4 class="error-header">{{message}}</h4>
+    <form [formGroup]="articleForm" (ngSubmit)="createArticle()">
+        <div>
+            <div class="field padding-botton">
+                <label class="padding-botton" for="name">Nom del l'article</label>
+                <input type="text" name="name" id="name" formControlName="name" placeholder="Nom del l'article"
+                    size="45" required />
+            </div>
+            <div class="error padding-botton" *ngIf="(name.dirty || message) && name.invalid">
+                Cal introduir un nom d'article vàlid
+            </div>
+            <div class="field padding-botton">
+                <label class="padding-botton" for="price">Preu del l'article</label>
+                <input type="number" name="price" id="price" formControlName="price" placeholder="Preu de l'article"
+                    required>
+            </div>
+            <div class="error padding-botton" *ngIf="(price.dirty || message) && price.invalid">
+                Cal introduir un preu per a l'article major a 0.1
+            </div>
+            <div class="field padding-botton">
+                <label class="padding-botton" for="imageUrl">URL de la imatge</label>
+                <input type="text" name="imageUrl" id="imageUrl" formControlName="imageUrl"
+                    placeholder="URL de la imatge" size="65" required>
+            </div>
+            <div class="error padding-botton" *ngIf="(imageUrl.dirty || message) && imageUrl.invalid">
+                <div *ngIf="imageUrl.errors.required">
+                    Cal introduir la URL de la imatge
+                </div>
+                <div *ngIf="imageUrl.errors.pattern">
+                    La URL de la imatge no és vàlida
+                </div>
+            </div>
+            <div class="field padding-botton">
+                <input type="checkbox" name="isOnSale" formControlName="isOnSale">
+                Està a la venda
+            </div>
+        </div>
+        <button type="submit">Crear</button>
+    </form>
+</div>
