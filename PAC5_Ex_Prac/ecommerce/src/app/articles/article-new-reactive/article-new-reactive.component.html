@@ -7,15 +7,15 @@
     <form [formGroup]="articleForm" (ngSubmit)="createArticle()">
         <div>
             <div class="field padding-botton">
-                <label class="padding-botton" for="name">Nom del l'article</label>
-                <input type="text" name="name" id="name" formControlName="name" placeholder="Nom del l'article"
+                <label class="padding-botton" for="name">Nom de l'article</label>
+                <input type="text" name="name" id="name" formControlName="name" placeholder="Nom de l'article"
                     size="45" required />
             </div>
             <div class="error padding-botton" *ngIf="(name.dirty || message) && name.invalid">
                 Cal introduir un nom d'article vàlid
             </div>
             <div class="field padding-botton">
-                <label class="padding-botton" for="price">Preu del l'article</label>
+                <label class="padding-botton" for="price">Preu de l'article</label>
                 <input type="number" name="price" id="price" formControlName="price" placeholder="Preu de l'article"
                     required>
             </div>
