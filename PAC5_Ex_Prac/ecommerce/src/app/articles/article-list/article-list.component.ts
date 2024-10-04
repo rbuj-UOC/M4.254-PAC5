@@ -1,28 +1,29 @@
-import { Component } from '@angular/core';
-import { Article } from "../../model/article";
+import { Component, OnInit } from '@angular/core';
+import { Article } from '../../model/article';
 import { ArticleQuantityChange } from '../../model/article-quantity-change';
 
 @Component({
   selector: 'app-article-list',
   template: `
     <div class="article-list">
-      <app-article-item [article]="articleObj"
-                        (quantityChange)="onQuantityChange($event)"
-                        *ngFor="let articleObj of articles"></app-article-item>
+      <app-article-item
+        [article]="articleObj"
+        (quantityChange)="onQuantityChange($event)"
+        *ngFor="let articleObj of articles"
+      ></app-article-item>
     </div>
   `,
   styles: `
     .article-list {
-        display: flex;
-        padding: 10px;
+      display: flex;
+      padding: 10px;
     }
   `
 })
-export class ArticleListComponent {
+export class ArticleListComponent implements OnInit {
+  public articles: Article[];
 
-  public articles: Array<Article>;
-
-  constructor() { }
+  constructor() {}
 
   ngOnInit() {
     this.articles = [
@@ -54,7 +55,7 @@ export class ArticleListComponent {
   }
 
   onQuantityChange(change: ArticleQuantityChange) {
-    const product = this.articles.find(art => {
+    const product = this.articles.find((art) => {
       return change.article.id === art.id;
     });
     product.quantityInCart += change.changeInQuantity;

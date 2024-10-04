@@ -19,13 +19,8 @@ import { ArticleNewReactiveComponent } from './articles/article-new-reactive/art
     ArticleNewTemplateComponent,
     ArticleNewReactiveComponent
   ],
-  imports: [
-    AppRoutingModule,
-    BrowserModule,
-    FormsModule,
-    ReactiveFormsModule
-  ],
+  imports: [AppRoutingModule, BrowserModule, FormsModule, ReactiveFormsModule],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

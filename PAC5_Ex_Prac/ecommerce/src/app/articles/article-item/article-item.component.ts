@@ -1,5 +1,11 @@
-import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
-import { Article } from "../../model/article";
+import {
+  Component,
+  Input,
+  Output,
+  EventEmitter,
+  ChangeDetectionStrategy
+} from '@angular/core';
+import { Article } from '../../model/article';
 import { ArticleQuantityChange } from '../../model/article-quantity-change';
 
 @Component({
@@ -9,20 +15,18 @@ import { ArticleQuantityChange } from '../../model/article-quantity-change';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ArticleItemComponent {
-
   @Input() public article: Article;
-  @Output() private quantityChange: EventEmitter<ArticleQuantityChange> = new EventEmitter();
+  @Output() private quantityChange = new EventEmitter<ArticleQuantityChange>();
 
-  constructor() { }
+  constructor() {}
 
   incrementInCart(event) {
-    this.quantityChange.emit({article: this.article, changeInQuantity: 1});
+    this.quantityChange.emit({ article: this.article, changeInQuantity: 1 });
   }
 
   decrementInCart(event) {
     if (this.article.quantityInCart > 0) {
-      this.quantityChange.emit({article: this.article, changeInQuantity: -1});
+      this.quantityChange.emit({ article: this.article, changeInQuantity: -1 });
     }
   }
-
 }

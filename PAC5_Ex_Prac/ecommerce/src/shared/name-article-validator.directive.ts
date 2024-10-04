@@ -1,4 +1,4 @@
-import { ValidatorFn, AbstractControl, ValidationErrors } from "@angular/forms";
+import { ValidatorFn, AbstractControl, ValidationErrors } from '@angular/forms';
 
 /** A hero's name can't match the given regular expression */
 export function NameArticleValidator(nameRe: RegExp): ValidatorFn {

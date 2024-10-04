@@ -8,9 +8,7 @@ import { NameArticleValidator } from '../../../shared/name-article-validator.dir
   templateUrl: './article-new-reactive.component.html',
   styleUrl: './article-new-reactive.component.css'
 })
-
 export class ArticleNewReactiveComponent {
-
   public message = '';
   public articleForm: FormGroup;
 
@@ -18,19 +16,38 @@ export class ArticleNewReactiveComponent {
     this.createForm();
   }
 
-  get name() { return this.articleForm.get('name'); }
+  get name() {
+    return this.articleForm.get('name');
+  }
 
-  get price() { return this.articleForm.get('price'); }
+  get price() {
+    return this.articleForm.get('price');
+  }
 
-  get imageUrl() { return this.articleForm.get('imageUrl'); }
+  get imageUrl() {
+    return this.articleForm.get('imageUrl');
+  }
 
-  get isOnSale() { return this.articleForm.get('isOnSale'); }
+  get isOnSale() {
+    return this.articleForm.get('isOnSale');
+  }
 
   createForm() {
     this.articleForm = this.fb.group({
-      name: ['', [Validators.required, NameArticleValidator(/(Prova|Test|Mock|Fake)/)]],
+      name: [
+        '',
+        [Validators.required, NameArticleValidator(/(Prova|Test|Mock|Fake)/)]
+      ],
       price: [0, [Validators.required, Validators.min(0.1)]],
-      imageUrl: ['', [Validators.required, Validators.pattern('^http(s?)\://[a-zA-Z0-9\.]+\.[a-zA-Z]{2,3}/[a-zA-Z0-9\.\-]+$')]],
+      imageUrl: [
+        '',
+        [
+          Validators.required,
+          Validators.pattern(
+            '^http(s?)://[a-zA-Z0-9.]+.[a-zA-Z]{2,3}/[a-zA-Z0-9.-]+$'
+          )
+        ]
+      ],
       isOnSale: false
     });
   }

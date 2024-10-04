@@ -9,7 +9,7 @@ import { NgForm } from '@angular/forms';
 })
 export class ArticleNewTemplateComponent {
   public message = '';
-  constructor() { }
+  constructor() {}
 
   createArticle(articleForm: NgForm) {
     if (articleForm.invalid) {
@@ -17,7 +17,12 @@ export class ArticleNewTemplateComponent {
     } else {
       const article: Article = articleForm.value.article;
       this.message = '';
-      articleForm.resetForm({name: '', price: '', imageUrl: '', isOnSale: false});
+      articleForm.resetForm({
+        name: '',
+        price: '',
+        imageUrl: '',
+        isOnSale: false
+      });
       console.log('Creating article', article);
     }
   }
