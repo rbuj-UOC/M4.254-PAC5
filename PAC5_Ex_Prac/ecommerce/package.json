@@ -9,7 +9,11 @@
     "test": "ng test",
     "lint": "ng lint"
   },
+  "keywords": [],
+  "author": "Robert Buj <rbuj@uoc.edu>",
+  "license": "CC0-1.0",
   "private": true,
+  "description": "",
   "dependencies": {
     "@angular/animations": "^18.2.7",
     "@angular/common": "^18.2.7",
