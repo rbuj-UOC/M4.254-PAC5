@@ -5,6 +5,8 @@ import { NameArticleValidator } from '../../../shared/name-article-validator.dir
 
 @Component({
   selector: 'app-article-new-reactive',
+  // eslint-disable-next-line @angular-eslint/prefer-standalone
+  standalone: false,
   templateUrl: './article-new-reactive.component.html',
   styleUrl: './article-new-reactive.component.css'
 })

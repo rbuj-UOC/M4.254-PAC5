@@ -4,6 +4,8 @@ import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-article-new-template',
+  // eslint-disable-next-line @angular-eslint/prefer-standalone
+  standalone: false,
   templateUrl: './article-new-template.component.html',
   styleUrl: './article-new-template.component.css'
 })
