@@ -20,13 +20,11 @@ export class ArticleItemComponent {
   @Input() public article: Article;
   @Output() private quantityChange = new EventEmitter<ArticleQuantityChange>();
 
-  constructor() {}
-
-  incrementInCart(event) {
+  incrementInCart() {
     this.quantityChange.emit({ article: this.article, changeInQuantity: 1 });
   }
 
-  decrementInCart(event) {
+  decrementInCart() {
     if (this.article.quantityInCart > 0) {
       this.quantityChange.emit({ article: this.article, changeInQuantity: -1 });
     }

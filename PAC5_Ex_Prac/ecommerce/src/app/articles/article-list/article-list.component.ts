@@ -25,8 +25,6 @@ import { ArticleQuantityChange } from '../../model/article-quantity-change';
 export class ArticleListComponent implements OnInit {
   public articles: Article[];
 
-  constructor() {}
-
   ngOnInit() {
     this.articles = [
       {

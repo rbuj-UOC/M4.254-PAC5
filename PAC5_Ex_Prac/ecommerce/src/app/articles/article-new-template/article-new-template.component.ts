@@ -11,7 +11,6 @@ import { NgForm } from '@angular/forms';
 })
 export class ArticleNewTemplateComponent {
   public message = '';
-  constructor() {}
 
   createArticle(articleForm: NgForm) {
     if (articleForm.invalid) {
