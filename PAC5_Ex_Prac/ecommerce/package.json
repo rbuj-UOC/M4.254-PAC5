@@ -13,7 +13,7 @@
   "author": "Robert Buj <rbuj@uoc.edu>",
   "license": "CC0-1.0",
   "private": true,
-  "description": "PAC 4 de l'assignatura desenvolupament front-end amb frameworks JavaScript del màster de desenvolupament d'aplicacions web",
+  "description": "PAC 5 de l'assignatura desenvolupament front-end amb frameworks JavaScript del màster de desenvolupament d'aplicacions web",
   "dependencies": {
     "@angular/animations": "^19.1.0",
     "@angular/common": "^19.1.0",
