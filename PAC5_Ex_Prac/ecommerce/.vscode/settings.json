@@ -3,6 +3,7 @@
   "editor.codeActionsOnSave": {
     "source.organizeImports": "explicit"
   },
+  "editor.formatOnSave": true,
   "emmet.triggerExpansionOnTab": true,
   "cSpell.language": "ca,en"
 }
