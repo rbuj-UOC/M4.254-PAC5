@@ -2,6 +2,7 @@
   // For more information, visit: https://go.microsoft.com/fwlink/?linkid=827846
   "recommendations": [
     "angular.ng-template",
+    "esbenp.prettier-vscode",
     "PKief.material-icon-theme",
     "streetsidesoftware.code-spell-checker",
     "streetsidesoftware.code-spell-checker-catalan"
