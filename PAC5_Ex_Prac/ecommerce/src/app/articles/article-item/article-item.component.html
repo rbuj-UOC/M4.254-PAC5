@@ -1,12 +1,21 @@
-<div class="article-item"  [class]="article.isOnSale ? 'article-item sale' : ''">
-    <img [src]="article.imageUrl" [alt]="article.name">
-    <div class="container">
-        <div class="name">{{article.name}}</div>
-        <div class="prize" [class]="!article.isOnSale ? 'prize not-on-sale' : ''">{{article.price}} €</div>
-        <div class="quantity" *ngIf="article.isOnSale">
-            <div><button [disabled]="article.quantityInCart === 0" (click)="decrementInCart()">-</button></div>
-            <div>{{article.quantityInCart}}</div>
-            <div><button (click)="incrementInCart()">+</button></div>
-        </div>
+<div class="article-item" [class]="article.isOnSale ? 'article-item sale' : ''">
+  <img [src]="article.imageUrl" [alt]="article.name" />
+  <div class="container">
+    <div class="name">{{ article.name }}</div>
+    <div class="prize" [class]="!article.isOnSale ? 'prize not-on-sale' : ''">
+      {{ article.price }} €
     </div>
+    <div class="quantity" *ngIf="article.isOnSale">
+      <div>
+        <button
+          [disabled]="article.quantityInCart === 0"
+          (click)="decrementInCart()"
+        >
+          -
+        </button>
+      </div>
+      <div>{{ article.quantityInCart }}</div>
+      <div><button (click)="incrementInCart()">+</button></div>
+    </div>
+  </div>
 </div>

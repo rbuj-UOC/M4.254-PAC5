@@ -10,5 +10,6 @@
         "parser": "angular"
       }
     }
-  ]
+  ],
+  "plugins": ["@awmottaz/prettier-plugin-void-html"]
 }

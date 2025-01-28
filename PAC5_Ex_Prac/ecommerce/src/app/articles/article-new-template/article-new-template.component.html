@@ -1,45 +1,76 @@
-<h3>
-    Crear un article (FormsModule)
-</h3>
+<h3>Crear un article (FormsModule)</h3>
 
 <div>
-    <h4 class="error">{{message}}</h4>
-    <form (ngSubmit)="createArticle(articleForm)" #articleForm="ngForm">
-        <div ngModelGroup="article">
-            <div class="field padding-botton">
-                <label class="padding-botton" for="name">Nom de l'article</label>
-                <input type="text" ngModel #articleName="ngModel" name="name" id="name" placeholder="Nom de l'article"
-                    size="45" required />
-            </div>
-            <div class="error padding-botton" *ngIf="(articleName.dirty  || message) && articleName.invalid">
-                Cal introduir el nom de l'article
-            </div>
-            <div class="field padding-botton">
-                <label class="padding-botton" for="price">Preu de l'article</label>
-                <input type="number" ngModel name="price" id="price" placeholder="Preu de l'article"
-                    #articlePrice="ngModel" required>
-            </div>
-            <div class="error padding-botton" *ngIf="(articlePrice.dirty || message) && articlePrice.invalid">
-                Cal introduir el preu de l'article
-            </div>
-            <div class="field padding-botton">
-                <label class="padding-botton" for="imageUrl">URL de la imatge</label>
-                <input type="text" ngModel name="imageUrl" id="imageUrl" placeholder="URL de la imatge" size="65"
-                    #articleImageUrl="ngModel" pattern="^http(s?)\://[a-zA-Z0-9\.]+\.[a-zA-Z]{2,3}/[a-zA-Z0-9\.\-]+$" required>
-            </div>
-            <div class="error padding-botton" *ngIf="(articleImageUrl.dirty || message) && articleImageUrl.invalid">
-                <div *ngIf="articleImageUrl.errors.required">
-                    Cal introduir la URL de la imatge
-                </div>
-                <div *ngIf="articleImageUrl.errors.pattern">
-                    La URL de la imatge no és vàlida
-                </div>
-            </div>
-            <div class="field padding-botton">
-                <input type="checkbox" ngModel name="isOnSale">
-                Està a la venda
-            </div>
+  <h4 class="error">{{ message }}</h4>
+  <form (ngSubmit)="createArticle(articleForm)" #articleForm="ngForm">
+    <div ngModelGroup="article">
+      <div class="field padding-botton">
+        <label class="padding-botton" for="name">Nom de l'article</label>
+        <input
+          type="text"
+          ngModel
+          #articleName="ngModel"
+          name="name"
+          id="name"
+          placeholder="Nom de l'article"
+          size="45"
+          required
+        />
+      </div>
+      <div
+        class="error padding-botton"
+        *ngIf="(articleName.dirty || message) && articleName.invalid"
+      >
+        Cal introduir el nom de l'article
+      </div>
+      <div class="field padding-botton">
+        <label class="padding-botton" for="price">Preu de l'article</label>
+        <input
+          type="number"
+          ngModel
+          name="price"
+          id="price"
+          placeholder="Preu de l'article"
+          #articlePrice="ngModel"
+          required
+        />
+      </div>
+      <div
+        class="error padding-botton"
+        *ngIf="(articlePrice.dirty || message) && articlePrice.invalid"
+      >
+        Cal introduir el preu de l'article
+      </div>
+      <div class="field padding-botton">
+        <label class="padding-botton" for="imageUrl">URL de la imatge</label>
+        <input
+          type="text"
+          ngModel
+          name="imageUrl"
+          id="imageUrl"
+          placeholder="URL de la imatge"
+          size="65"
+          #articleImageUrl="ngModel"
+          pattern="^http(s?)\://[a-zA-Z0-9\.]+\.[a-zA-Z]{2,3}/[a-zA-Z0-9\.\-]+$"
+          required
+        />
+      </div>
+      <div
+        class="error padding-botton"
+        *ngIf="(articleImageUrl.dirty || message) && articleImageUrl.invalid"
+      >
+        <div *ngIf="articleImageUrl.errors.required">
+          Cal introduir la URL de la imatge
         </div>
-        <button type="submit">Crear</button>
-    </form>
+        <div *ngIf="articleImageUrl.errors.pattern">
+          La URL de la imatge no és vàlida
+        </div>
+      </div>
+      <div class="field padding-botton">
+        <input type="checkbox" ngModel name="isOnSale" />
+        Està a la venda
+      </div>
+    </div>
+    <button type="submit">Crear</button>
+  </form>
 </div>
