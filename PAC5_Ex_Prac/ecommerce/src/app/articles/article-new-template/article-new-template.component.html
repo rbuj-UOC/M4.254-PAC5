@@ -14,13 +14,11 @@
           id="name"
           placeholder="Nom de l'article"
           size="45"
-          required
-        />
+          required />
       </div>
       <div
         class="error padding-botton"
-        *ngIf="(articleName.dirty || message) && articleName.invalid"
-      >
+        *ngIf="(articleName.dirty || message) && articleName.invalid">
         Cal introduir el nom de l'article
       </div>
       <div class="field padding-botton">
@@ -32,13 +30,11 @@
           id="price"
           placeholder="Preu de l'article"
           #articlePrice="ngModel"
-          required
-        />
+          required />
       </div>
       <div
         class="error padding-botton"
-        *ngIf="(articlePrice.dirty || message) && articlePrice.invalid"
-      >
+        *ngIf="(articlePrice.dirty || message) && articlePrice.invalid">
         Cal introduir el preu de l'article
       </div>
       <div class="field padding-botton">
@@ -52,13 +48,11 @@
           size="65"
           #articleImageUrl="ngModel"
           pattern="^http(s?)\://[a-zA-Z0-9\.]+\.[a-zA-Z]{2,3}/[a-zA-Z0-9\.\-]+$"
-          required
-        />
+          required />
       </div>
       <div
         class="error padding-botton"
-        *ngIf="(articleImageUrl.dirty || message) && articleImageUrl.invalid"
-      >
+        *ngIf="(articleImageUrl.dirty || message) && articleImageUrl.invalid">
         <div *ngIf="articleImageUrl.errors.required">
           Cal introduir la URL de la imatge
         </div>

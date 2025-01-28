@@ -13,13 +13,11 @@
           formControlName="name"
           placeholder="Nom de l'article"
           size="45"
-          required
-        />
+          required />
       </div>
       <div
         class="error padding-botton"
-        *ngIf="(name.dirty || message) && name.invalid"
-      >
+        *ngIf="(name.dirty || message) && name.invalid">
         Cal introduir un nom d'article vàlid
       </div>
       <div class="field padding-botton">
@@ -30,13 +28,11 @@
           id="price"
           formControlName="price"
           placeholder="Preu de l'article"
-          required
-        />
+          required />
       </div>
       <div
         class="error padding-botton"
-        *ngIf="(price.dirty || message) && price.invalid"
-      >
+        *ngIf="(price.dirty || message) && price.invalid">
         Cal introduir un preu per a l'article major a 0.1
       </div>
       <div class="field padding-botton">
@@ -48,13 +44,11 @@
           formControlName="imageUrl"
           placeholder="URL de la imatge"
           size="65"
-          required
-        />
+          required />
       </div>
       <div
         class="error padding-botton"
-        *ngIf="(imageUrl.dirty || message) && imageUrl.invalid"
-      >
+        *ngIf="(imageUrl.dirty || message) && imageUrl.invalid">
         <div *ngIf="imageUrl.errors.required">
           Cal introduir la URL de la imatge
         </div>
