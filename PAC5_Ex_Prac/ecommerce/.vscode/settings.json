@@ -1,4 +1,7 @@
 {
   "material-icon-theme.activeIconPack": "angular",
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": "explicit"
+  },
   "cSpell.language": "ca,en"
 }
