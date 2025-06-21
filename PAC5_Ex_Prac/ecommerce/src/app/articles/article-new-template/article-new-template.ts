@@ -1,15 +1,15 @@
 import { Component } from '@angular/core';
-import { Article } from '../../model/article';
 import { NgForm } from '@angular/forms';
+import { Article } from '../../model/article';
 
 @Component({
   selector: 'app-article-new-template',
   // eslint-disable-next-line @angular-eslint/prefer-standalone
   standalone: false,
-  templateUrl: './article-new-template.component.html',
-  styleUrl: './article-new-template.component.css'
+  templateUrl: './article-new-template.html',
+  styleUrl: './article-new-template.css'
 })
-export class ArticleNewTemplateComponent {
+export class ArticleNewTemplate {
   public message = '';
 
   createArticle(articleForm: NgForm) {

@@ -1,20 +1,22 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Article } from '../../model/article';
 import { NameArticleValidator } from '../../../shared/name-article-validator.directive';
+import { Article } from '../../model/article';
 
 @Component({
   selector: 'app-article-new-reactive',
   // eslint-disable-next-line @angular-eslint/prefer-standalone
   standalone: false,
-  templateUrl: './article-new-reactive.component.html',
-  styleUrl: './article-new-reactive.component.css'
+  templateUrl: './article-new-reactive.html',
+  styleUrl: './article-new-reactive.css'
 })
-export class ArticleNewReactiveComponent {
+export class ArticleNewReactive {
+  private fb = inject(FormBuilder);
+
   public message = '';
   public articleForm: FormGroup;
 
-  constructor(private fb: FormBuilder) {
+  constructor() {
     this.createForm();
   }
 

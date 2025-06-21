@@ -5,16 +5,18 @@
     <div class="prize" [class]="!article.isOnSale ? 'prize not-on-sale' : ''">
       {{ article.price }} €
     </div>
-    <div class="quantity" *ngIf="article.isOnSale">
-      <div>
-        <button
-          [disabled]="article.quantityInCart === 0"
-          (click)="decrementInCart()">
-          -
-        </button>
+    @if (article.isOnSale) {
+      <div class="quantity">
+        <div>
+          <button
+            [disabled]="article.quantityInCart === 0"
+            (click)="decrementInCart()">
+            -
+          </button>
+        </div>
+        <div>{{ article.quantityInCart }}</div>
+        <div><button (click)="incrementInCart()">+</button></div>
       </div>
-      <div>{{ article.quantityInCart }}</div>
-      <div><button (click)="incrementInCart()">+</button></div>
-    </div>
+    }
   </div>
 </div>

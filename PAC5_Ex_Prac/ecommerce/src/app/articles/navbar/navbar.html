@@ -24,12 +24,19 @@
     Nou article reactiu
   </button>
 </div>
-<div *ngIf="active === 0 || active === 1">
-  <app-article-list></app-article-list>
-</div>
-<div *ngIf="active === 2">
-  <app-article-new-template></app-article-new-template>
-</div>
-<div *ngIf="active === 3">
-  <app-article-new-reactive></app-article-new-reactive>
+<div>
+  @switch (active) {
+    @case (0) {
+      <app-article-list></app-article-list>
+    }
+    @case (1) {
+      <app-article-list></app-article-list>
+    }
+    @case (2) {
+      <app-article-new-template></app-article-new-template>
+    }
+    @case (3) {
+      <app-article-new-reactive></app-article-new-reactive>
+    }
+  }
 </div>

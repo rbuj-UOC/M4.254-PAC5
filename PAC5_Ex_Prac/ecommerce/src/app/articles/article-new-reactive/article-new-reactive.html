@@ -15,11 +15,11 @@
           size="45"
           required />
       </div>
-      <div
-        class="error padding-botton"
-        *ngIf="(name.dirty || message) && name.invalid">
-        Cal introduir un nom d'article vàlid
-      </div>
+      @if ((name.dirty || message) && name.invalid) {
+        <div class="error padding-botton">
+          Cal introduir un nom d'article vàlid
+        </div>
+      }
       <div class="field padding-botton">
         <label class="padding-botton" for="price">Preu de l'article</label>
         <input
@@ -30,11 +30,11 @@
           placeholder="Preu de l'article"
           required />
       </div>
-      <div
-        class="error padding-botton"
-        *ngIf="(price.dirty || message) && price.invalid">
-        Cal introduir un preu per a l'article major a 0.1
-      </div>
+      @if ((price.dirty || message) && price.invalid) {
+        <div class="error padding-botton">
+          Cal introduir un preu per a l'article major a 0.1
+        </div>
+      }
       <div class="field padding-botton">
         <label class="padding-botton" for="imageUrl">URL de la imatge</label>
         <input
@@ -46,16 +46,15 @@
           size="65"
           required />
       </div>
-      <div
-        class="error padding-botton"
-        *ngIf="(imageUrl.dirty || message) && imageUrl.invalid">
-        <div *ngIf="imageUrl.errors.required">
-          Cal introduir la URL de la imatge
+      @if ((imageUrl.dirty || message) && imageUrl.invalid) {
+        <div class="error padding-botton">
+          @if (imageUrl.errors.required) {
+            <div>Cal introduir la URL de la imatge</div>
+          } @else if (imageUrl.errors.pattern) {
+            <div>La URL de la imatge no és vàlida</div>
+          }
         </div>
-        <div *ngIf="imageUrl.errors.pattern">
-          La URL de la imatge no és vàlida
-        </div>
-      </div>
+      }
       <div class="field padding-botton">
         <input type="checkbox" name="isOnSale" formControlName="isOnSale" />
         Està a la venda

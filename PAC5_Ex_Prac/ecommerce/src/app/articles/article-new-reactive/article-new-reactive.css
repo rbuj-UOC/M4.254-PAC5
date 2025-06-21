@@ -1,0 +1,11 @@
+.error {
+  color: red;
+}
+
+.padding-botton {
+  padding-bottom: 6px;
+}
+
+label {
+  display: block;
+}

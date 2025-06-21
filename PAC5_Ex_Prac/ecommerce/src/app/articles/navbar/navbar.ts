@@ -4,10 +4,10 @@ import { Component } from '@angular/core';
   selector: 'app-navbar',
   // eslint-disable-next-line @angular-eslint/prefer-standalone
   standalone: false,
-  templateUrl: './navbar.component.html',
-  styleUrl: './navbar.component.css'
+  templateUrl: './navbar.html',
+  styleUrl: './navbar.css'
 })
-export class NavbarComponent {
+export class Navbar {
   active: number;
 
   constructor() {

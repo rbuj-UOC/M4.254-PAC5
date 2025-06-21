@@ -16,11 +16,11 @@
           size="45"
           required />
       </div>
-      <div
-        class="error padding-botton"
-        *ngIf="(articleName.dirty || message) && articleName.invalid">
-        Cal introduir el nom de l'article
-      </div>
+      @if ((articleName.dirty || message) && articleName.invalid) {
+        <div class="error padding-botton">
+          Cal introduir el nom de l'article
+        </div>
+      }
       <div class="field padding-botton">
         <label class="padding-botton" for="price">Preu de l'article</label>
         <input
@@ -32,11 +32,11 @@
           #articlePrice="ngModel"
           required />
       </div>
-      <div
-        class="error padding-botton"
-        *ngIf="(articlePrice.dirty || message) && articlePrice.invalid">
-        Cal introduir el preu de l'article
-      </div>
+      @if ((articlePrice.dirty || message) && articlePrice.invalid) {
+        <div class="error padding-botton">
+          Cal introduir el preu de l'article
+        </div>
+      }
       <div class="field padding-botton">
         <label class="padding-botton" for="imageUrl">URL de la imatge</label>
         <input
@@ -50,16 +50,15 @@
           pattern="^http(s?)\://[a-zA-Z0-9\.]+\.[a-zA-Z]{2,3}/[a-zA-Z0-9\.\-]+$"
           required />
       </div>
-      <div
-        class="error padding-botton"
-        *ngIf="(articleImageUrl.dirty || message) && articleImageUrl.invalid">
-        <div *ngIf="articleImageUrl.errors.required">
-          Cal introduir la URL de la imatge
+      @if ((articleImageUrl.dirty || message) && articleImageUrl.invalid) {
+        <div class="error padding-botton">
+          @if (articleImageUrl.errors.required) {
+            <div>Cal introduir la URL de la imatge</div>
+          } @else if (articleImageUrl.errors.pattern) {
+            <div>La URL de la imatge no és vàlida</div>
+          }
         </div>
-        <div *ngIf="articleImageUrl.errors.pattern">
-          La URL de la imatge no és vàlida
-        </div>
-      </div>
+      }
       <div class="field padding-botton">
         <input type="checkbox" ngModel name="isOnSale" />
         Està a la venda

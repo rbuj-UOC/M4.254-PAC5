@@ -8,11 +8,12 @@ import { ArticleQuantityChange } from '../../model/article-quantity-change';
   standalone: false,
   template: `
     <div class="article-list">
-      <app-article-item
-        [article]="articleObj"
-        (quantityChange)="onQuantityChange($event)"
-        *ngFor="let articleObj of articles"
-      ></app-article-item>
+      @for (articleObj of articles; track articleObj.id) {
+        <app-article-item
+          [article]="articleObj"
+          (quantityChange)="onQuantityChange($event)"
+        ></app-article-item>
+      }
     </div>
   `,
   styles: `
@@ -22,7 +23,7 @@ import { ArticleQuantityChange } from '../../model/article-quantity-change';
     }
   `
 })
-export class ArticleListComponent implements OnInit {
+export class ArticleList implements OnInit {
   public articles: Article[];
 
   ngOnInit() {
